@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const GetStartedPage(),
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
-        '/dashboard': (context) => const DashboardScreen(),
+        '/dashboard': (context) => const DashboardPage(),
       },
     );
   }
