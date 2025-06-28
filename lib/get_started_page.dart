@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login_page.dart'; // Import halaman tujuan
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});
@@ -6,16 +7,16 @@ class GetStartedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFF9F9), // warna latar belakang
+      backgroundColor: const Color(0xFFFFF9F9),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Header merah dengan teks
+            // Header merah
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 16),
-              color: const Color(0xFF8B0000), // warna merah tua
+              color: const Color(0xFF8B0000),
               child: const Text(
                 'Mawar Group',
                 textAlign: TextAlign.center,
@@ -29,11 +30,11 @@ class GetStartedPage extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Gambar ilustrasi (ganti dengan asset Anda)
+            // Gambar ilustrasi
             SizedBox(
               height: 200,
               child: Image.asset(
-                'assets/images/illustration.png', // pastikan file ini ada di asset
+                'assets/images/illustration.png', // Pastikan gambar ini ada dan sudah didaftarkan di pubspec.yaml
                 fit: BoxFit.contain,
               ),
             ),
@@ -51,16 +52,20 @@ class GetStartedPage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                // Navigasi ke halaman berikutnya
+                // Navigasi ke LoginPage
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage(),
+                  ),
+                );
               },
               child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     'GET STARTED',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   SizedBox(width: 8),
                   Icon(Icons.double_arrow_rounded),
