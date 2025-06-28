@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart'; // Import halaman tujuan
+import 'login_page.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});

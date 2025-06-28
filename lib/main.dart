@@ -5,6 +5,8 @@ import 'register_page.dart';
 import 'dashboard_page.dart';
 import 'presensi_page.dart';
 import 'riwayat_presensi.dart';
+import 'presensi_page.dart';
+import 'riwayat_presensi.dart';
 
 void main() {
   runApp(const MyApp());
