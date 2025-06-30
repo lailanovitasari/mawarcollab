@@ -12,7 +12,7 @@ class GetStartedPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Header merah
+            
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -30,18 +30,18 @@ class GetStartedPage extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Gambar ilustrasi
+            
             SizedBox(
               height: 200,
               child: Image.asset(
-                'assets/images/illustration.png', // Pastikan gambar ini ada dan sudah didaftarkan di pubspec.yaml
+                'assets/images/illustration.png', 
                 fit: BoxFit.contain,
               ),
             ),
 
             const SizedBox(height: 40),
 
-            // Tombol Get Started
+            
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow,
@@ -55,7 +55,7 @@ class GetStartedPage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                // Navigasi ke LoginPage
+                
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
