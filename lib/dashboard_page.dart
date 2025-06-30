@@ -50,27 +50,15 @@ class _DashboardPageState extends State<DashboardPage> {
                   ),
                 ),
               ),
-            )
+            ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.login),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.login), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.list_alt), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
           BottomNavigationBarItem(
             icon: Icon(Icons.admin_panel_settings),
             label: '',
@@ -92,7 +80,6 @@ class DashboardHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ambil pengguna terakhir (anggap sebagai yg login)
     final currentUser = UserData.users.last;
     final userEmail = currentUser['email'] ?? 'Pengguna';
 
@@ -122,7 +109,7 @@ class DashboardHome extends StatelessWidget {
               fontSize: 18,
               color: Colors.red,
             ),
-          )
+          ),
         ],
       ),
     );
@@ -135,11 +122,6 @@ class PlaceholderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        title,
-        style: const TextStyle(fontSize: 24),
-      ),
-    );
+    return Center(child: Text(title, style: const TextStyle(fontSize: 24)));
   }
 }

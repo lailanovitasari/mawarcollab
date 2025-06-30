@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'get_started_page.dart';
 import 'login_page.dart';
 import 'register_page.dart';
+import 'user_data.dart';
 import 'dashboard_page.dart';
 import 'presensi_page.dart';
 import 'riwayat_presensi.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         '/register': (context) => const RegisterPage(),
         '/dashboard': (context) => const DashboardPage(),
         '/presensi': (context) => const PresensiPage(),
-        '/riwayat': (context) => const RiwayatPresensiPage(),
+        '/riwayat': (context) => const RiwayatPresensiPage(riwayat: [],),
       },
     );
   }

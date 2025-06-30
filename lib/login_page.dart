@@ -39,21 +39,16 @@ class _LoginPageState extends State<LoginPage> {
               TextFormField(
                 controller: emailController,
                 decoration: const InputDecoration(labelText: 'Email'),
-                validator:
-                    (value) =>
-                        value == null || value.isEmpty
-                            ? 'Email wajib diisi'
-                            : null,
+                validator: (value) =>
+                    value == null || value.isEmpty ? 'Email wajib diisi' : null,
               ),
               TextFormField(
                 controller: passwordController,
                 decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
-                validator:
-                    (value) =>
-                        value == null || value.isEmpty
-                            ? 'Password wajib diisi'
-                            : null,
+                validator: (value) => value == null || value.isEmpty
+                    ? 'Password wajib diisi'
+                    : null,
               ),
               const SizedBox(height: 20),
               ElevatedButton(
