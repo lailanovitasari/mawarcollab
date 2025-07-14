@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// Import halaman-halaman yang digunakan
 import 'get_started_page.dart';
 import 'login_page.dart';
 import 'register_page.dart';
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       theme: ThemeData(
         primarySwatch: Colors.red,
-        fontFamily: 'Sans', // pastikan font ini ada di pubspec.yaml
+        fontFamily: 'Sans', 
       ),
       initialRoute: '/',
       routes: {
