@@ -45,7 +45,10 @@ class GetStartedPage extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow,
                 foregroundColor: Colors.black,
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32,
+                  vertical: 12,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
@@ -58,9 +61,7 @@ class GetStartedPage extends StatelessWidget {
                 children: [
                   Text(
                     'GET STARTED',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   SizedBox(width: 8),
                   Icon(Icons.double_arrow_rounded),
