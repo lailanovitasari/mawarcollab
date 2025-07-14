@@ -26,10 +26,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         fontFamily: 'Sans', 
       ),
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        fontFamily: 'Sans', 
-      ),
+
       initialRoute: '/',
       routes: {
         '/': (context) => const GetStartedPage(),
