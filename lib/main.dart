@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'get_started_page.dart';
 import 'login_page.dart';
 import 'register_page.dart';
-import 'user_data.dart'; // model, tidak perlu ditaruh di routes
-import 'user_page.dart';
+import 'user_data.dart';
 import 'dashboard_page.dart';
+import 'presensi_page.dart';
+import 'riwayat_presensi.dart';
 import 'presensi_page.dart';
 import 'riwayat_presensi.dart';
 
@@ -26,6 +27,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         fontFamily: 'Sans', 
       ),
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        fontFamily: 'Sans', // pastikan font ini ada di pubspec.yaml
+      ),
       initialRoute: '/',
       routes: {
         '/': (context) => const GetStartedPage(),
@@ -33,8 +38,7 @@ class MyApp extends StatelessWidget {
         '/register': (context) => const RegisterPage(),
         '/dashboard': (context) => const DashboardPage(),
         '/presensi': (context) => const PresensiPage(),
-        '/riwayat': (context) => const RiwayatPresensiPage(),
-        '/user': (context) => const UserPage(),
+        '/riwayat': (context) => const RiwayatPresensiPage(riwayat: [],),
       },
     );
   }
