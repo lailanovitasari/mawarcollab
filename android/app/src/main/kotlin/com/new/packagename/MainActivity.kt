@@ -1,4 +1,4 @@
-package com.example.mawarcollab
+package com.new.packagename
 
 import io.flutter.embedding.android.FlutterActivity
 
