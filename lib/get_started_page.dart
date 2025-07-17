@@ -7,60 +7,73 @@ class GetStartedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFF9F9),
-      body: Center(
+      backgroundColor: const Color(0xFFFFF0F5), // Pink muda lembut
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
+            // Header Mawar Group
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              color: const Color(0xFF8B0000),
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              color: const Color(0xFFDB7093), // Pink lebih gelap
               child: const Text(
                 'Mawar Group',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 28,
+                  fontSize: 30,
                   fontFamily: 'Cursive',
-                  color: Colors.amber,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  letterSpacing: 1.5,
                 ),
-              ),
-            ),
-
-            const SizedBox(height: 24),
-
-            
-            SizedBox(
-              height: 200,
-              child: Image.asset(
-                'assets/images/illustration.png', 
-                fit: BoxFit.contain,
               ),
             ),
 
             const SizedBox(height: 40),
 
-            
+            // Gambar utama
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Image.asset(
+                  'assets/images/illustration.png', // Pastikan file ini ada
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            // Tulisan sambutan
+            const Text(
+              'Selamat Datang di Aplikasi Presensi',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF8B0000),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            // Tombol Get Started
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow,
+                backgroundColor: Colors.amber,
                 foregroundColor: Colors.black,
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 32,
-                  vertical: 12,
+                  horizontal: 40,
+                  vertical: 16,
                 ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
+                elevation: 5,
               ),
               onPressed: () {
-                
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginPage(),
-                  ),
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
                 );
               },
               child: const Row(
@@ -68,13 +81,19 @@ class GetStartedPage extends StatelessWidget {
                 children: [
                   Text(
                     'GET STARTED',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      letterSpacing: 1,
+                    ),
                   ),
                   SizedBox(width: 8),
-                  Icon(Icons.double_arrow_rounded),
+                  Icon(Icons.arrow_forward_ios_rounded),
                 ],
               ),
             ),
+
+            const SizedBox(height: 40),
           ],
         ),
       ),
