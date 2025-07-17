@@ -12,10 +12,7 @@ class SuccessTransition extends StatelessWidget {
       splash: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            'assets/images/success_wave.gif', // Kamu bisa pakai animasi tumpahan air atau wave GIF
-            height: 120,
-          ),
+          Image.asset('assets/images/success_wave.gif', height: 120),
           const SizedBox(height: 16),
           const Text(
             "Login Berhasil!",
