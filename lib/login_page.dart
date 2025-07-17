@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'register_page.dart';
+import 'success_transition_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -17,7 +19,10 @@ class _LoginPageState extends State<LoginPage> {
     final password = passwordController.text;
 
     if (email == 'admin@gmail.com' && password == 'admin123') {
-      Navigator.pushReplacementNamed(context, '/dashboard');
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const SuccessTransitionPage()),
+      );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Email atau Password salah!')),

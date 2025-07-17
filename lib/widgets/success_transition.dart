@@ -1,35 +1,24 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import '../pages/dashboard.dart';
+import 'dashboard_page.dart'; // ganti jika nama file halaman dashboard berbeda
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
-class SuccessTransition extends StatelessWidget {
-  const SuccessTransition({super.key});
+class SuccessTransitionPage extends StatelessWidget {
+  const SuccessTransitionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      splash: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset('assets/images/success_wave.gif', height: 120),
-          const SizedBox(height: 16),
-          const Text(
-            "Login Berhasil!",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.pink,
-            ),
-          ),
-        ],
-      ),
-      backgroundColor: Colors.white,
+      splash: Image.asset(
+        'assets/images/ilustrasimawar1.png',
+      ), // ganti gambar jika perlu
+      backgroundColor: Colors.pink.shade100,
       nextScreen: const DashboardPage(),
-      splashIconSize: 250,
-      duration: 1800,
       splashTransition: SplashTransition.fadeTransition,
-      pageTransitionType: PageTransitionType.fade,
+      pageTransitionType: PageTransitionType.topToBottom,
+      duration: 1200,
+      animationDuration: const Duration(milliseconds: 800),
+      splashIconSize: 200,
     );
   }
 }
