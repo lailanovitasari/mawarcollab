@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'get_started_page.dart';
 import 'login_page.dart';
 import 'register_page.dart';
@@ -23,8 +24,9 @@ class MyApp extends StatelessWidget {
       title: 'Mawar Group App',
       theme: ThemeData(
         primarySwatch: Colors.red,
-        fontFamily: 'Sans', // pastikan font ini ada di pubspec.yaml
+        fontFamily: 'Sans', 
       ),
+
       initialRoute: '/',
       routes: {
         '/': (context) => const GetStartedPage(),
