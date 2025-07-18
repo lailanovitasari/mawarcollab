@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'register_page.dart';
+import 'package:firebase_auth/firebase_auth.dart'; // ⬅️ tambahkan ini
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -11,17 +12,36 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  bool _isLoading = false;
 
-  void _login() {
+  void _login() async {
     final email = emailController.text.trim();
-    final password = passwordController.text;
+    final password = passwordController.text.trim();
 
-    if (email == 'admin@gmail.com' && password == 'admin123') {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+
+      // Login berhasil, arahkan ke dashboard
       Navigator.pushReplacementNamed(context, '/dashboard');
-    } else {
+    } on FirebaseAuthException catch (e) {
+      String errorMessage = 'Terjadi kesalahan saat login.';
+      if (e.code == 'user-not-found') {
+        errorMessage = 'Email tidak ditemukan.';
+      } else if (e.code == 'wrong-password') {
+        errorMessage = 'Password salah.';
+      }
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Email atau Password salah!')),
+        SnackBar(content: Text(errorMessage)),
       );
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -51,14 +71,16 @@ class _LoginPageState extends State<LoginPage> {
                     : null,
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _login();
-                  }
-                },
-                child: const Text("Login"),
-              ),
+              _isLoading
+                  ? const Center(child: CircularProgressIndicator())
+                  : ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          _login();
+                        }
+                      },
+                      child: const Text("Login"),
+                    ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/register');

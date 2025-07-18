@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'profil_page.dart';
 class RiwayatPresensiPage extends StatelessWidget {
   final List<Map<String, String>> riwayat;
 

@@ -12,7 +12,6 @@ class GetStartedPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -27,21 +26,22 @@ class GetStartedPage extends StatelessWidget {
                 ),
               ),
             ),
-
             const SizedBox(height: 24),
 
-            
+            // Gambar ilustrasi (cek file dan pubspec.yaml!)
             SizedBox(
               height: 200,
               child: Image.asset(
-                'assets/images/illustration.png', 
+                'assets/images/illustration.png',
                 fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Text('Gambar tidak ditemukan');
+                },
               ),
             ),
 
             const SizedBox(height: 40),
 
-            
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow,
@@ -55,7 +55,6 @@ class GetStartedPage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
