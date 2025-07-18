@@ -1,4 +1,4 @@
-package com.mawar.mawarpresence
+package com.mawar.mawarcollab
 
 import io.flutter.embedding.android.FlutterActivity
 
