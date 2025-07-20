@@ -14,7 +14,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.mawar.mawarcollab"
+    namespace = "com.mawarpresence.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
 
@@ -28,8 +28,8 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.mawar.mawarcollab" // ✅ Ubah sesuai nama app
-        minSdk = 23 // ✅ Penting untuk Firebase Auth 23.x.x
+        applicationId = "com.mawarpresence.app" 
+        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
