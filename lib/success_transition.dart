@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dashboard_page.dart'; // ganti jika nama file halaman dashboard berbeda
+import 'package:mawarcollab/dashboard_page.dart';
+import 'dashboard_page.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
